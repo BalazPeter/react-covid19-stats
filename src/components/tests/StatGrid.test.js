@@ -18,7 +18,7 @@ afterEach(() => {
   container = null;
 });
 
-it("renders with or without a parameters", () => {
+it("renders StatGrid with or without a parameters", () => {
   act(() => {
       render(<StatGrid />, container);  
     });  

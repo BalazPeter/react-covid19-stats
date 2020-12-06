@@ -19,7 +19,7 @@ afterEach(() => {
   container = null;
 });
 
-it("renders with or without a name", () => {
+it("render an offline page with content", () => {
     act(() => {
       render(<OfflinePage />, container);
     });

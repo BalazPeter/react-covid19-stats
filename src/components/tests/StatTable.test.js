@@ -4,7 +4,7 @@ import { act } from "react-dom/test-utils";
 import StatTable from "../StatTable";
 
 let container = null;
-const fakeUser = [
+const fakeData = [
   {
     "state_ut": "Maharashtra",
     "confirmed": 1757520,
@@ -44,22 +44,26 @@ afterEach(() => {
   container = null;
 });
 
-it("renders user data", async () => {
+it("Render StatTable with fakeData with mock function", async () => {
   var tableHead = "State/UTConfirmedsorted descendingActiveRecoveredDeceasedMaharashtra175752080221163011146202Karnataka8659312514682918811578";
   var bitSortedTable = "State/UTConfirmedsorted descendingActiveRecoveredDeceased";
     jest.spyOn(global, "fetch").mockImplementation(() =>    
     Promise.resolve({      
-        json: () => Promise.resolve(fakeUser)    
+        json: () => Promise.resolve(fakeData)    
     })  
     );
   await act(async () => {
-    render(<StatTable rows={fakeUser} />, container);
+    render(<StatTable rows={fakeData} />, container);
   });
+  global.fetch.mockRestore();
+
+  
+
+
   expect(container.firstChild.querySelector("table").textContent).toBe(tableHead);
   expect(container.firstChild.querySelector("thead").textContent).toBe(bitSortedTable);
   expect(container.querySelector("span").textContent).toBe("State/UT");
   expect(container.firstChild).toHaveClass('makeStyles-root-1')
   // remove the mock to ensure tests are completely isolated  
-  global.fetch.mockRestore();
 });
 

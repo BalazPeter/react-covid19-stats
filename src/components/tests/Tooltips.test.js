@@ -7,7 +7,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 
 
-describe('StatTable component', () => {
+describe('Tooltip component', () => {
     let cont = null;
   const data = 
   {
@@ -35,7 +35,7 @@ describe('StatTable component', () => {
   "recovered"
   ]};
 
-  it('returns length when there is data', () => {
+  it('returns empty object when there is null label', () => {
     const wrapper = shallow(<Tooltip details={data}
         fields={fields}
         label={null}
@@ -43,7 +43,7 @@ describe('StatTable component', () => {
     expect(wrapper).toEqual({});
   });
   
-  it('returns length when there is data', () => {
+  it('render popup in tooltip', () => {
     const wrapper = shallow(<Tooltip details={data}
         fields={fields}
         label={null}
@@ -51,17 +51,5 @@ describe('StatTable component', () => {
     const renderUsers = wrapper.find("Popup");
     expect(renderUsers).toHaveLength(1);
   });
-
-//   it("renders user data", async () => {
-//     const container = document.createElement("div");
-//     document.body.appendChild(container);
-//     await act(async () => {
-//     render(<Tooltip details={data}
-//         fields={fields}
-//         label={null}
-//         />, container);
-//     expect(container.querySelector("span").textContent).toBe("State/UT");
-    
-//     });
 
   });

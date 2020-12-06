@@ -42,9 +42,5 @@ const nullData = [];
     expect(renderUsers.exists()).toBe(false);
     });
 
-  // it('returns null when there is no data', () => {
-  //   const wrapper = shallow(<StatTable rows={null} />);
-  //   expect(wrapper.isEmptyRender()).toBe(true);
-  //   });
 });
 
