@@ -1,7 +1,7 @@
-import Enzyme, { render } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import App from '../../App';
-Enzyme.configure({ adapter: new Adapter() });
+// import Enzyme, { render } from 'enzyme';
+// import Adapter from 'enzyme-adapter-react-16';
+// import App from '../../App';
+// Enzyme.configure({ adapter: new Adapter() });
 
 
 // describe('A series of tests', () => {
