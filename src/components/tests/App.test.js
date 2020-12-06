@@ -4,9 +4,6 @@ import App from '../../App';
 Enzyme.configure({ adapter: new Adapter() });
 
 
-
-
-
 describe('A series of tests', () => {
     const originalConsoleError = console.error;
   
